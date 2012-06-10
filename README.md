@@ -1,7 +1,7 @@
 ace-bookmarklet
 ===============
 
-Bookmarklet build of the Ajax.org Cloud9 Editor Ace.
+Bookmarklet build of Ace, the Ajax.org Cloud9 Editor.
 
 Built using [these instructions](https://github.com/ajaxorg/ace/wiki/Building-ace) with the code from the [main repo](https://github.com/ajaxorg/ace). Built on Windows 7 x64.
 
