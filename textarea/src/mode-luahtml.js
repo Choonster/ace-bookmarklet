@@ -1,11 +1,11 @@
-﻿__ace_shadowed__.define('ace/mode/luahtml', function(require, exports, module) {
+﻿__ace_shadowed__.define('ace/mode/luahtml', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/html', 'ace/mode/lua', 'ace/tokenizer', 'ace/mode/luahtml_highlight_rules'], function(require, exports, module) {
 
 
-var oop = require("ace/lib/oop");
-var HTMLMode = require("ace/mode/html").Mode;
-var LuaMode = require("ace/mode/lua").Mode;
-var Tokenizer = require("ace/tokenizer").Tokenizer;
-var LuaHtmlHighlightRules = require("ace/mode/luahtml_highlight_rules").LuaHtmlHighlightRules;
+var oop = require("../lib/oop");
+var HtmlMode = require("./html").Mode;
+var LuaMode = require("./lua").Mode;
+var Tokenizer = require("../tokenizer").Tokenizer;
+var LuaHtmlHighlightRules = require("./luahtml_highlight_rules").LuaHtmlHighlightRules;
 
 var Mode = function() {
     var highlighter = new LuaHtmlHighlightRules();
@@ -16,7 +16,7 @@ var Mode = function() {
         "lua-": LuaMode
     });
 };
-oop.inherits(Mode, HTMLMode);
+oop.inherits(Mode, HtmlMode);
 
 exports.Mode = Mode;
 });
@@ -2373,12 +2373,12 @@ oop.inherits(LuaHighlightRules, TextHighlightRules);
 
 exports.LuaHighlightRules = LuaHighlightRules;
 });
-﻿__ace_shadowed__.define('ace/mode/luahtml_highlight_rules', function(require, exports, module) {
+﻿__ace_shadowed__.define('ace/mode/luahtml_highlight_rules', ['require', 'exports', 'module' , 'ace/oop', 'ace/mode/html_highlight_rules', 'ace/mode/lua_highlight_rules'], function(require, exports, module) {
 
 
-var oop = require("ace/lib/oop");
-var HtmlHighlightRules = require("ace/mode/html_highlight_rules").HtmlHighlightRules;
-var LuaHighlightRules = require("ace/mode/lua_highlight_rules").LuaHighlightRules;
+var oop = require("../oop");
+var HtmlHighlightRules = require("./html_highlight_rules").HtmlHighlightRules;
+var LuaHighlightRules = require("./lua_highlight_rules").LuaHighlightRules;
 
 var LuaHtmlHighlightRules = function() {
     this.$rules = HtmlHighlightRules().getRules();
