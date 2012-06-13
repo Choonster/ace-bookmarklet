@@ -2373,30 +2373,27 @@ oop.inherits(LuaHighlightRules, TextHighlightRules);
 
 exports.LuaHighlightRules = LuaHighlightRules;
 });
-﻿__ace_shadowed__.define('ace/mode/luahtml_highlight_rules', ['require', 'exports', 'module' , 'ace/oop', 'ace/mode/html_highlight_rules', 'ace/mode/lua_highlight_rules'], function(require, exports, module) {
+﻿__ace_shadowed__.define('ace/mode/luahtml_highlight_rules', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/html_highlight_rules', 'ace/mode/lua_highlight_rules'], function(require, exports, module) {
 
 
-var oop = require("../oop");
+var oop = require("../lib/oop");
 var HtmlHighlightRules = require("./html_highlight_rules").HtmlHighlightRules;
 var LuaHighlightRules = require("./lua_highlight_rules").LuaHighlightRules;
 
 var LuaHtmlHighlightRules = function() {
-    this.$rules = HtmlHighlightRules().getRules();
+    this.$rules = new HtmlHighlightRules().getRules();
     
-    var customRules = {
-        start: [ {
+    for (var i in this.$rules){
+        this.$rules[i].unshift({
             token: "luatag-percent",
-            regex: "<\\%",
+            regex: "<\\%\\=?",
             next: "lua-start"
-        },
-		{
-			token: "luatag-lua",
-			regex: "<\\?lua",
-			next: "lua-start"
-		} ]
-    };
-    
-    this.addRules(customRules, "lua-");
+        }, {
+            token: "luatag-lua",
+            regex: "<\\?lua\\=?",
+            next: "lua-start"
+        });
+    }
     this.embedRules(LuaHighlightRules, "lua-", [
 		{
 			token: "keyword1",
