@@ -109,7 +109,7 @@ var modesByName = {
     less:       ["LESS"         , "less"],
     liquid:     ["Liquid"       , "liquid"],
     lua:        ["Lua"          , "lua"],
-	luahtml:	["LuaHTML"		, "lp"],
+	luahtml:	["LuaPage"		, "lp"],
 	// LuaHTML implements the LuaPage markup as described by the Kepler Project's CGILua documentation: http://keplerproject.github.com/cgilua/manual.html#templates
     markdown:   ["Markdown"     , "md|markdown"],
     ocaml:      ["OCaml"        , "ml|mli"],
@@ -188,7 +188,7 @@ var docs = {
     "docs/ocaml.ml": "OCaml",
     "docs/OpenSCAD.scad": "OpenSCAD",
     "docs/lua.lua": "Lua",
-	"docs/luahtml.lp": "LuaPage", // index.lp from the Kepler Project's LuaDoc HTML doclet. http://keplerproject.github.com/luadoc/
+	"docs/luapage.lp": "LuaPage", // index.lp from the Kepler Project's LuaDoc HTML doclet. http://keplerproject.github.com/luadoc/
     "docs/liquid.liquid": "Liquid",
     "docs/java.java": "Java",
     "docs/clojure.clj": "Clojure",
